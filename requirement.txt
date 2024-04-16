@@ -1,3 +1,6 @@
 streamlit
 plotly==5.8.0  
 pandas
+psycopg2-binary
+#database collector
+python-dotenv
