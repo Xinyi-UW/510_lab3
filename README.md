@@ -22,11 +22,17 @@ Then, trying to polish the process:
 "Keep secret" part was complex process, writting down a step memo:
 SQL stored: Supabase
 
-1.Go to Supabase project setting, find your URL and password (know it in advance)
-2.Open a new terminal,
-2.1 evn
-2.2 export MYSUPERPASSWORD=xxxxxx
-3.Back to your exsiting terminal, export DATABASE_URL=postgres:xxxxxx
-4.Back to app.py, write"con = psycopg2.connect(os.getenv("DATABASE_URL"))"
-5.Create a ".env" file, put your secret inside
-5.On Streamlit cloud, keep your secret
+// 1.Go to Supabase project setting, find your URL and password (know it in advance)
+// 2.Open a new terminal,
+// 2.1 evn
+//2.2 export MYSUPERPASSWORD=xxxxxx
+// 3.Back to your exsiting terminal, export DATABASE_URL=postgres:xxxxxx
+// 4.Back to app.py, write"con = psycopg2.connect(os.getenv("DATABASE_URL"))"
+// 5.Create a ".env" file, put your secret inside
+// 6.On Streamlit cloud, keep your secret
+
+How to run this project:
+// 1.pip install streamlit psycopg2 python-dotenv plotly
+// 2.postgresql://username:password@hostname:port/databasename
+// 3.DATABASE_URL=postgresql://username:password@hostname:port/databasename
+// 4.streamlit run app.py
