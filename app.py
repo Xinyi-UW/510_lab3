@@ -1,9 +1,8 @@
 import os
 import datetime
 from dataclasses import dataclass
-
-import streamlit as st
 import psycopg2
+import streamlit as st
 from dotenv import load_dotenv
 
 
