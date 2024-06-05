@@ -1,39 +1,103 @@
 # 510_lab3
 
-# Lecture: Data storage with Python
+## Lecture: Data Storage with Python
 
-# Objective: Make an app that you can use to manage your chatGPT prompts!
+### Objective
 
-Getting Started
+Create an app to manage your ChatGPT prompts.
 
-python -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
+### Changes Made
 
-Some debug experiences
+- Corrected a small typo mentioned by the TA and refreshed the app page.
 
-Connecting local git and remote githut repository everytime encounter some similar problem.
-Then, trying to polish the process:
-1.Create a new repository on your github with README.md
-2.Git clone
-3.Create app.py, new stuff on vs code, then push them to repository to check how does it wrok
+## Getting Started
 
----
+1. Create a virtual environment:
 
-"Keep secret" part was complex process, writting down a step memo:
-SQL stored: Supabase
+   ```bash
+   python -m venv venv
+   source venv/bin/activate
+   ```
 
-// 1.Go to Supabase project setting, find your URL and password (know it in advance)
-// 2.Open a new terminal,
-// 2.1 evn
-//2.2 export MYSUPERPASSWORD=xxxxxx
-// 3.Back to your exsiting terminal, export DATABASE_URL=postgres:xxxxxx
-// 4.Back to app.py, write"con = psycopg2.connect(os.getenv("DATABASE_URL"))"
-// 5.Create a ".env" file, put your secret inside
-// 6.On Streamlit cloud, keep your secret
+2. Install the required packages:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-How to run this project:
-// 1.pip install streamlit psycopg2 python-dotenv plotly
-// 2.postgresql://username:password@hostname:port/databasename
-// 3.DATABASE_URL=postgresql://username:password@hostname:port/databasename
-// 4.streamlit run app.py
+## Debug Experiences
+
+### GitHub Repository Connection
+
+Connecting a local Git repository to a remote GitHub repository often encounters similar problems. Here’s an improved process:
+
+1. Create a new repository on GitHub with a `README.md`.
+2. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   ```
+3. Create `app.py` and other files in VS Code, then push them to the repository to check how it works:
+   ```bash
+   git add .
+   git commit -m "Initial commit"
+   git push origin main
+   ```
+
+### Keeping Secrets Secure
+
+Managing secrets securely can be complex. Here’s a step-by-step memo:
+
+1. **SQL Stored: Supabase**
+   - Go to Supabase project settings, find your URL and password.
+2. **Setting Up Environment Variables**
+
+   - Open a new terminal:
+     ```bash
+     # Create a new environment variable
+     export MYSUPERPASSWORD=xxxxxx
+     ```
+   - Go back to your existing terminal:
+     ```bash
+     export DATABASE_URL=postgres://username:password@hostname:port/databasename
+     ```
+
+3. **Updating `app.py`**
+
+   - Update your database connection:
+
+     ```python
+     import os
+     import psycopg2
+
+     con = psycopg2.connect(os.getenv("DATABASE_URL"))
+     ```
+
+4. **Creating a `.env` File**
+
+   - Create a `.env` file and put your secrets inside:
+     ```
+     DATABASE_URL=postgres://username:password@hostname:port/databasename
+     ```
+
+5. **Streamlit Cloud**
+   - On Streamlit cloud, keep your secrets secure by setting them in the environment settings.
+
+## How to Run This Project
+
+1. Install required packages:
+
+   ```bash
+   pip install streamlit psycopg2 python-dotenv plotly
+   ```
+
+2. Set up your database URL:
+
+   ```bash
+   export DATABASE_URL=postgresql://username:password@hostname:port/databasename
+   ```
+
+3. Run the app:
+   ```bash
+   streamlit run app.py
+   ```
+
+Feel free to make any additional adjustments based on your specific requirements or additional information.
